@@ -16,9 +16,7 @@ const PaperDetailPage = async ({
   });
   const paper = await res.json();
 
-
-  
-  const journalImage = getImageLink(paper.journal?.journalimage?.url)
+  const journalImage = getImageLink(paper.journal?.journalimage?.url);
   const publisherImage = getImageLink(paper.publisher?.logo?.url);
 
   const impact = paper.journal?.impactfactor || paper.journalaltimpactfactor;
@@ -32,7 +30,7 @@ const PaperDetailPage = async ({
 
         <div className={styles.headerSection}>
           <div className={styles.headerImageWrapper}>
-            {paper.journal.journalimage.url && (
+            {paper.journal?.journalimage?.url && (
               <Image
                 width={400}
                 height={400}
