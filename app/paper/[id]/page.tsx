@@ -29,8 +29,8 @@ const PaperDetailPage = async ({
         </Link>
 
         <div className={styles.headerSection}>
-          <div className={styles.headerImageWrapper}>
-            {paper.journal?.journalimage?.url && (
+          {paper.journal?.journalimage?.url && (
+            <div className={styles.headerImageWrapper}>
               <Image
                 width={400}
                 height={400}
@@ -38,8 +38,8 @@ const PaperDetailPage = async ({
                 alt={paper.journal.name}
                 className={styles.headerImage}
               />
-            )}
-          </div>
+            </div>
+          )}
           <div className={styles.headerContent}>
             <h1 className={styles.title}>{paper.papertitle}</h1>
             <div className={styles.badges}>
