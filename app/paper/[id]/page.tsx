@@ -18,7 +18,7 @@ const PaperDetailPage = async ({
 
 
   
-  const journalImage = getImageLink(paper.journal.journalimage.url)
+  const journalImage = getImageLink(paper.journal?.journalimage?.url)
   const publisherImage = getImageLink(paper.publisher?.logo?.url);
 
   const impact = paper.journal?.impactfactor || paper.journalaltimpactfactor;
