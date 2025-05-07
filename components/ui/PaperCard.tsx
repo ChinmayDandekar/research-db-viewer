@@ -79,7 +79,6 @@ export default function PaperCard({
               <Link
                 className={styles.link}
                 href={{ pathname: `/paper/${paper.id}` }}
-                scroll={false}
               >
                 View Details
               </Link>
@@ -124,11 +123,7 @@ export default function PaperCard({
               <p className={styles.card__tag}>
                 IF {paper.journal?.impactfactor ?? paper.journalaltimpactfactor}
               </p>
-              <Link
-                className={styles.link}
-                href={`/paper/${paper.id}`}
-                scroll={false}
-              >
+              <Link className={styles.link} href={`/paper/${paper.id}`}>
                 View Details
               </Link>
             </div>
