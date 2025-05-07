@@ -35,7 +35,7 @@ const PaperDetailPage = async ({
                 width={400}
                 height={400}
                 src={journalImage}
-                alt={paper.journal.name}
+                alt={"journal image"}
                 className={styles.headerImage}
               />
             </div>
