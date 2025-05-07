@@ -5,16 +5,20 @@ import Image from "next/image";
 import { getImageLink } from "@/lib/utils";
 import MaxWidthWrapper from "@/components/ui/MaxWidthWrapper";
 
-const PaperDetailPage = async ({ params }: { params: { id: string } }) => {
-  const res = await fetch(`${BASE_API_URL}/acceptedpapers/${params.id}`, {
+const PaperDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+  const res = await fetch(`${BASE_API_URL}/acceptedpapers/${id}`, {
     cache: "no-store",
   });
   const paper = await res.json();
 
-  const journalImage = paper.journal?.journalimage?.url
-    ? `${BASE_API_URL}${paper.journal.journalimage.url}`
-    : "/default-journal.webp";
 
+  
+  const journalImage = getImageLink(paper.journal.journalimage.url)
   const publisherImage = getImageLink(paper.publisher?.logo?.url);
 
   const impact = paper.journal?.impactfactor || paper.journalaltimpactfactor;
@@ -28,12 +32,12 @@ const PaperDetailPage = async ({ params }: { params: { id: string } }) => {
 
         <div className={styles.headerSection}>
           <div className={styles.headerImageWrapper}>
-            {paper.salevelone?.icon?.url && (
+            {paper.journal.journalimage.url && (
               <Image
                 width={400}
                 height={400}
                 src={journalImage}
-                alt={paper.salevelone.name}
+                alt={paper.journal.name}
                 className={styles.headerImage}
               />
             )}
@@ -79,7 +83,7 @@ const PaperDetailPage = async ({ params }: { params: { id: string } }) => {
           <p>
             <strong>Year:</strong> {paper.published_at?.split("-")[0]}
           </p>
-          <p style={{lineClamp: 1}}>
+          <p style={{ lineClamp: 1 }}>
             <strong>DOI:</strong>{" "}
             <a
               className={styles.link}
