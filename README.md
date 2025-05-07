@@ -31,8 +31,8 @@ A responsive Next.js application that fetches and displays accepted research pap
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/enago-research-app.git
-cd enago-research-app
+gh repo clone ChinmayDandekar/research-db-viewer
+cd research-db-viewer
 ```
 
 ### 2. Install dependencies
@@ -48,7 +48,7 @@ yarn install
 If you need environment variables for the API URL, create a `.env.local` file:
 
 ```env
-NEXT_PUBLIC_API_BASE=https://easydash.enago.com
+NEXT_PUBLIC_API_BASE_URL=https://easydash.enago.com
 ```
 
 > Update fetch URLs to use this env variable where applicable.
