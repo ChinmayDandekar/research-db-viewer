@@ -1,0 +1,15 @@
+@import "./variables";
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: $secondary-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}

@@ -1,0 +1,104 @@
+@import "@/styles/variables";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 600) {
+    grid-template-columns: auto;
+  }
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    padding: 0.4rem 0.8rem;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+// Skelelton CSS
+
+.skeleton {
+  background: #ffffff;
+  border-radius: $border-radius;
+//   width: minmax(450px, 1fr);
+//   width: 100%;
+  padding: 1rem;
+  animation: pulse 1.5s infinite ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  gap: 1rem;
+
+  &__image {
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  &__title,
+  &__text {
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+  }
+
+  &__title {
+    height: 20px;
+    width: 70%;
+  }
+
+  &__text {
+    height: 14px;
+    width: 90%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

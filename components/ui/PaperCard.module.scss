@@ -1,0 +1,162 @@
+@import "@/styles/variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: $card-padding;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  &__divider {
+    width: 100%;
+    height: 2px;
+    background-color: lightgray;
+  }
+
+  &__media {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: $border-radius;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__tag {
+    padding: 0.25rem 1rem;
+    background-color: lightgray;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  // === Variant 1: Horizontal (default) ===
+  &--horizontal {
+    flex-direction: row;
+    gap: 1.5rem;
+
+    .card__media {
+      width: 200px;
+      height: auto;
+
+      flex-shrink: 0;
+    }
+
+    .card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card__title {
+      font-size: 1.1rem;
+    }
+
+    .card__tag{
+        font-size: 14px;
+    }
+
+    //   converts to vertical on mobile screens
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      .card__media {
+        align-self: center;
+      }
+
+      
+    }
+  }
+
+  // === Variant 2: Split-meta ===
+  &--split-meta {
+    flex-direction: column;
+
+    .card__top {
+      display: flex;
+      gap: 20px;
+
+      .card__media {
+        width: 100px;
+        height: 150px;
+
+        flex-shrink: 0;
+      }
+
+      .card__title {
+        //   margin-left: 1rem;
+        font-size: 1.1rem;
+        color: $primary-color;
+        line-clamp: 4;
+      }
+    }
+
+    .card__meta {
+      margin-top: 0.5rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    //   converts to vertical on mobile screens
+    @media (max-width: 600px) {
+      .card__top {
+        flex-direction: column;
+        .card__media {
+          width: 100%;
+          height: auto;
+          align-self: center;
+        }
+      }
+    }
+  }
+
+  // === Variant 3: Vertical ===
+  &--vertical {
+    flex-direction: column;
+
+    .card__media {
+      width: 100%;
+      height: auto;
+    }
+
+    .card__content {
+      padding-top: 0rem;
+    }
+  }
+}
+
+.link {
+  color: white;
+  font-weight: 500;
+  background-color: $primary-color;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  &:hover {
+    background-color: $primary-color-darker;
+  }
+}
