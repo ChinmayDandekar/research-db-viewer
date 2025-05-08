@@ -1,4 +1,4 @@
-@import "@/styles/variables";
+@use "@/styles/variables";
 
 .sort {
   display: flex;
@@ -14,28 +14,23 @@
     border: 1px solid #ccc;
     background-color: white;
     min-width: 160px;
-
- 
   }
 
-  p{
+  p {
     min-width: max-content;
     padding: 0;
     margin: 0;
-   
   }
 
-  @media (max-width:500px) {
-    gap:0.5rem;
-    p{
-
+  @media (max-width: 500px) {
+    gap: 0.5rem;
+    p {
       font-size: 14px;
     }
 
-    select{
-        width: 100px;
-        min-width: 100px;
-  
+    select {
+      width: 100px;
+      min-width: 100px;
     }
   }
 }

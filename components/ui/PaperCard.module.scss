@@ -1,4 +1,4 @@
-@import "@/styles/variables";
+@use "@/styles/variables";
 
 .card {
   display: flex;
@@ -66,8 +66,8 @@
       font-size: 1.1rem;
     }
 
-    .card__tag{
-        font-size: 14px;
+    .card__tag {
+      font-size: 14px;
     }
 
     //   converts to vertical on mobile screens
@@ -77,8 +77,6 @@
       .card__media {
         align-self: center;
       }
-
-      
     }
   }
 

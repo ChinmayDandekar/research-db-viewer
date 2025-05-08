@@ -1,4 +1,4 @@
-@import "@/styles/variables";
+@use "@/styles/variables";
 
 .grid {
   display: grid;
@@ -48,8 +48,8 @@
 .skeleton {
   background: #ffffff;
   border-radius: $border-radius;
-//   width: minmax(450px, 1fr);
-//   width: 100%;
+  //   width: minmax(450px, 1fr);
+  //   width: 100%;
   padding: 1rem;
   animation: pulse 1.5s infinite ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);

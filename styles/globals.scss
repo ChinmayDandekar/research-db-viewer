@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables";
 
 body {
   font-family: system-ui, sans-serif;
@@ -8,16 +8,14 @@ body {
   padding: 0;
 }
 
-input, select, a{
+input,
+select,
+a {
   outline-color: $primary-color;
 }
-
-
 
 .page-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
-
-
